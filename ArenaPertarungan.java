@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 interface BisaBertarung {
     void serang(Monster target);
+
     void serang(Monster target, String jurus);
 }
 
@@ -25,7 +26,8 @@ abstract class Monster {
 
     public void terimaSerangan(int damage) {
         kesehatan -= damage;
-        if (kesehatan < 0) kesehatan = 0;
+        if (kesehatan < 0)
+            kesehatan = 0;
         System.out.println(nama + " menerima serangan sebesar " + damage + " poin.");
     }
 
@@ -126,7 +128,7 @@ public class ArenaPertarungan {
         int hpApi = input.nextInt();
         System.out.print("ATK Monster Api: ");
         int atkApi = input.nextInt();
-        input.nextLine(); 
+        input.nextLine();
 
         System.out.print("== Nama Monster Air: ");
         String namaAir = input.nextLine();
@@ -134,7 +136,7 @@ public class ArenaPertarungan {
         int hpAir = input.nextInt();
         System.out.print("ATK Monster Air: ");
         int atkAir = input.nextInt();
-        input.nextLine(); 
+        input.nextLine();
 
         System.out.print("== Nama Monster Listrik: ");
         String namaListrik = input.nextLine();
@@ -142,7 +144,7 @@ public class ArenaPertarungan {
         int hpListrik = input.nextInt();
         System.out.print("ATK Monster Listrik: ");
         int atkListrik = input.nextInt();
-        input.nextLine(); 
+        input.nextLine();
 
         MonsterApi api = new MonsterApi(namaApi, hpApi, atkApi);
         MonsterAir air = new MonsterAir(namaAir, hpAir, atkAir);
